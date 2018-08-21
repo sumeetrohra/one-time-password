@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { View, LayoutAnimation, UIManager, TouchableWithoutFeedback } from 'react-native';
 import KeyboardSpacer from 'react-native-keyboard-spacer';
-import DismissKeyboard from 'dismissKeyboard';
+import DismissKeyboard from 'dismissKeyboard'; //included with keyboard-spacer...
 import { Input, Button } from 'react-native-elements';
 
 class Login extends Component {
@@ -9,19 +9,21 @@ class Login extends Component {
 
     componentWillMount() {
         UIManager.setLayoutAnimationEnabledExperimental && UIManager.setLayoutAnimationEnabledExperimental(true);
-        LayoutAnimation.spring();
+        LayoutAnimation.easeInEaseOut();
     }
 
     componentWillUpdate() {
         UIManager.setLayoutAnimationEnabledExperimental && UIManager.setLayoutAnimationEnabledExperimental(true);
-        LayoutAnimation.spring();
+        LayoutAnimation.easeInEaseOut();
     }
 
     renderButton() {
         return (
         <Button
             title="Send OTP"
-            onPress={() => this.setState({ showOTPSection: true })}
+            onPress={() => {
+                this.setState({ showOTPSection: true });
+            }}
             titleStyle={{
                 flex: 2
             }}

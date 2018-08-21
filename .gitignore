@@ -2,11 +2,13 @@
 
 # expo
 .expo/
+.expo-source/
 
 # dependencies
 /node_modules
 
 # misc
+/android
 .env.local
 .env.development.local
 .env.test.local
